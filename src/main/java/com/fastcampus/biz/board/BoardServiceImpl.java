@@ -1,9 +1,14 @@
 package com.fastcampus.biz.board;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component("boardService")
 public class BoardServiceImpl implements BoardService{
 
+    @Autowired
     private BoardDAO boardDAO;
 
 //    public BoardServiceImpl() {
@@ -15,11 +20,10 @@ public class BoardServiceImpl implements BoardService{
 //        this.boardDAO = boardDAO;
 //    }
 
-
-    public void setBoardDAO(BoardDAO boardDAO) {
-        System.out.println("===> BoardServiceImpl 持失");
-        this.boardDAO = boardDAO;
-    }
+//    public void setBoardDAO(BoardDAO boardDAO) {
+//        System.out.println("===> BoardServiceImpl 持失");
+//        this.boardDAO = boardDAO;
+//    }
 
     @Override
     public void insertBoard(BoardVO vo) {
