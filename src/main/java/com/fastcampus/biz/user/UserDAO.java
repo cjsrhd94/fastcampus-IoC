@@ -10,9 +10,10 @@ import java.util.List;
 import com.fastcampus.biz.board.BoardVO;
 import com.fastcampus.biz.common.JDBCUtil;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 // DAO(Data Access Object)
-@Component
+@Repository
 public class UserDAO implements UserService{
 	// JDBC 관련 변수 선언
 	private Connection conn;
@@ -108,9 +109,7 @@ public class UserDAO implements UserService{
 		List<UserVO> userList = new ArrayList<UserVO>();
 		try {
 			conn = JDBCUtil.getConnection();
-			stmt = conn.prepareStatement(USER_GET);
-			stmt.setString(1, vo.getId());
-			stmt.setString(2, vo.getPassword());
+			stmt = conn.prepareStatement(USER_LIST);
 			rs = stmt.executeQuery();
 			if(rs.next()) {
 				UserVO user = new UserVO();

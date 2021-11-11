@@ -2,10 +2,11 @@ package com.fastcampus.biz.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component("boardService")
+@Service("boardService")
 public class BoardServiceImpl implements BoardService{
 
     @Autowired
