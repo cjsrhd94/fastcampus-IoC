@@ -6,8 +6,13 @@ public class BoardServiceImpl implements BoardService{
 
     private BoardDAO boardDAO;
 
-    public BoardServiceImpl() {
+//    public BoardServiceImpl() {
+//        System.out.println("===> BoardServiceImpl 持失");
+//    }
+
+    public BoardServiceImpl(BoardDAO boardDAO) {
         System.out.println("===> BoardServiceImpl 持失");
+        this.boardDAO = boardDAO;
     }
 
     @Override

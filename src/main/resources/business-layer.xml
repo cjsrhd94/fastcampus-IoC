@@ -5,6 +5,8 @@
 
 
     <bean id="boardDAO" class="com.fastcampus.biz.board.BoardDAO"></bean>
-    <bean id="boardService" class="com.fastcampus.biz.board.BoardServiceImpl"></bean>
+    <bean id="boardService" class="com.fastcampus.biz.board.BoardServiceImpl">
+        <constructor-arg ref="boardDAO"/>
+    </bean>
 
 </beans>
