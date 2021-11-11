@@ -9,9 +9,11 @@ import java.util.List;
 
 import com.fastcampus.biz.board.BoardVO;
 import com.fastcampus.biz.common.JDBCUtil;
+import org.springframework.stereotype.Component;
 
 // DAO(Data Access Object)
-public class UserDAO {
+@Component
+public class UserDAO implements UserService{
 	// JDBC 관련 변수 선언
 	private Connection conn;
 	private PreparedStatement stmt;
@@ -26,6 +28,7 @@ public class UserDAO {
 	
 	// USERS 관련 CRUD(Create(INSERT), Read(SELECT), Update, Delete) 메소드 구현
 	// 회원 등록
+	@Override
 	public void insertUser(UserVO vo) {
 		try {
 			conn = JDBCUtil.getConnection();
@@ -43,6 +46,7 @@ public class UserDAO {
 	}
 	
 	// 회원 수정
+	@Override
 	public void updateUser(UserVO vo) {
 		try {
 			conn = JDBCUtil.getConnection();
@@ -58,6 +62,7 @@ public class UserDAO {
 	}
 	
 	// 회원 삭제
+	@Override
 	public void deleteUser(UserVO vo) {
 		try {
 			conn = JDBCUtil.getConnection();
@@ -72,6 +77,7 @@ public class UserDAO {
 	}
 	
 	// 회원 상세 조회
+	@Override
 	public UserVO getUser(UserVO vo) {
 		UserVO user = null;
 		try {
@@ -97,6 +103,7 @@ public class UserDAO {
 	}
 	
 	// 회원 목록 조회
+	@Override
 	public List<UserVO> getUserList(UserVO vo) {
 		List<UserVO> userList = new ArrayList<UserVO>();
 		try {
