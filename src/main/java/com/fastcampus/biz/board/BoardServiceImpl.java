@@ -10,7 +10,13 @@ public class BoardServiceImpl implements BoardService{
 //        System.out.println("===> BoardServiceImpl 持失");
 //    }
 
-    public BoardServiceImpl(BoardDAO boardDAO) {
+//    public BoardServiceImpl(BoardDAO boardDAO) {
+//        System.out.println("===> BoardServiceImpl 持失");
+//        this.boardDAO = boardDAO;
+//    }
+
+
+    public void setBoardDAO(BoardDAO boardDAO) {
         System.out.println("===> BoardServiceImpl 持失");
         this.boardDAO = boardDAO;
     }
