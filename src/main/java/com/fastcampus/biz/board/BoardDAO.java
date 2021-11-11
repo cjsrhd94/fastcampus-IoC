@@ -10,7 +10,7 @@ import java.util.List;
 import com.fastcampus.biz.common.JDBCUtil;
 
 // 2. DAO(Data Access Object) 클래스 : 실질적인 DB 연동을 담당하는 클래스
-public class BoardDAO{
+public class BoardDAO implements BoardService {
 	// JDBC 관련 변수 선언
 	private Connection conn;
 	private PreparedStatement stmt;
